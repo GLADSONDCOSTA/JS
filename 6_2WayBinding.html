@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title></title>
+        <Script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"> 
+        </Script>
+        <script>
+             var app = angular.module("myapp",[]);
+        app.controller("mycnt1",function($scope){
+            $scope.name="Gladson";
+            $scope.code=12345;
+            $scope.showmsg = function(msg){
+                alert(msg);
+            }
+
+        });
+
+        app.controller("mycnt2",function($scope){
+            $scope.name="dcosta";
+            $scope.code=123456;
+            $scope.showmsg = function(msg){
+                alert(msg)
+            }
+
+        });
+
+        </script>
+    </head>
+    <body ng-app="myapp">
+        <div ng-controller="mycnt1">
+            name <input type="text" ng-model="name"/>
+            code <input type="text" ng-model="code"/>
+            {{name}} &nbsp {{code}}
+            <button ng-click="showmsg(name)">click</button>
+
+        </div>
+
+        <div ng-controller="mycnt2">
+            name <input type="text" ng-model="name"/>
+            code <input type="text" ng-model="code"/>
+            {{name}} &nbsp {{code}}
+            <button ng-click="showmsg(code)">click</button>
+        </div>
+
+    </body>
+</html>

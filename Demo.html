@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <title>
+            Demo
+        </title>
+    </head>
+    <body>
+        <input type="text" id="t1" placeholder="Enter number or string"/>
+        <button onclick="palindrome()">Palindrome</button>
+        <button onclick="vowels()">Vowels</button>
+        <button onclick="armstrong()">Armstrong</button>
+        <button onclick="prime()">Prime</button>
+        <button onclick="sortString()">Sort String</button>
+
+        <script>
+            function palindrome(){
+                var s1 = document.getElementById("t1").value;
+                var res = s1.split('').reverse().join('');
+                if(s1==res){
+                    alert("Palindrome");
+                }else{
+                    alert("Not Palindrome")
+                }
+
+            }
+
+            function vowels(){
+                var s1 = document.getElementById("t1").value;
+                var count=0;
+                for(var i=0;i<=s1.length-1;i++){
+                    if(s1.charAt(i)=='a' || s1.charAt(i)=='e'||s1.charAt(i)=='i' || s1.charAt(i)=='o' || s1.charAt(i)=='u'){
+                        count++;
+                    }
+                }
+                alert(count);
+            }
+
+            function armstrong(){
+                var s1 = parseInt(document.getElementById("t1").value);
+                var rem,temp,sum=0;
+                temp=s1;
+                while(temp!=0){
+                    rem=temp%10;
+                    rem=rem*rem*rem;
+                    sum+=rem;
+                    temp=parseInt(temp/10);
+                }
+                if(sum==s1){
+                    alert("Armstrong");
+                }else{
+                    alert("Not Armstrong");
+                }
+            }
+
+            function prime(){
+                var s1 = parseInt(document.getElementById("t1").value);
+                for(var i=2;i<=s1;i++){
+                    if(s1%i==0){
+                        alert("Not prime");
+                        break;
+                    }else{
+                        alert("Prime");
+                        break;
+                    }
+
+                }
+            }
+
+            function sortString(){
+                var s1 =(document.getElementById("t1").value);
+                var res=s1.split(',').sort().join(',');
+                alert(res);
+            }
+        </script>
+    </body>
+</html>

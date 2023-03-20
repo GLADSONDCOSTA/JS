@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>
+            anagram
+        </title>
+    </head>
+    <body>
+        <input type="text"  id="t1" placeholder="Enter the String1"/>
+        <input type="text"  id="t2" placeholder="Enter the String2"/>
+        <button onclick="anagram()">Anagram</button>
+
+        <script>
+            function anagram(){
+                var s1 = document.getElementById("t1").value;
+                var s2 = document.getElementById("t2").value;
+                s1=s1.split('').sort().join('');
+                s2=s2.split('').sort().join('');
+                if(s1==s2){
+                    alert("anagram");
+                }else{
+                    alert("Not anagram");
+                }
+
+            }
+        </script>
+
+    </body>
+</html>

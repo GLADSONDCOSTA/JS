@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js">
+        </script>
+        <script>
+            var app = angular.module('myapp',[]);
+            app.controller('mycnt',function($scope){
+                    $scope.item=["mouse","key","monitor","pen"];
+                    $scope.insert = function(){
+                        $scope.item.push($scope.it1);
+                    }
+                    $scope.delete = function(n){
+                        $scope.item.splice(n,1);
+                    }
+                    $scope.reverse = function(){
+                        $scope.item.reverse();
+                    }
+                    $scope.sort = function(){
+                        $scope.item.sort();
+                    }
+            });
+
+        </script>
+    </head>
+    <body ng-app="myapp" ng-controller="mycnt">
+        <ol>
+            <li ng-repeat="x in item">{{x}}
+            </li>
+        </ol>
+        Insert Item<input type="text" ng-model="it1"/>
+        <button ng-click="insert()">Insert</button>
+        <button ng-click="delete()">Delete</button>
+        <button ng-click="reverse()">Reverse</button>
+        <button ng-click="sort()">Sort</button>
+    </body>
+</html>

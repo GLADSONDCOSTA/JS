@@ -1,0 +1,92 @@
+<html>
+  <head>
+    <title>Simple Calculator</title>
+  </head>
+  <body>
+  <input type="text" id="n1" placeholder="Enter number or String"/><br><br>
+  <button onclick="palindrome()">Palindrome</button><br><br>
+  <button onclick="vowels()">Vowels</button><br><br>
+  <button onclick="prime()">Prime</button><br><br>
+  <button onclick="armstrong()">Armstrong</button><br><br>
+	<button onclick="revstring()">String reverse</button><br><br>
+	<button onclick="fib()">Fibonacci</button><br><br>
+  <script> 
+  
+  function palindrome(){
+  var s1 = document.getElementById("n1").value;
+  var res= s1.split('').reverse().join('');
+  if (s1===res){
+  alert("palindrome");
+  }else{
+  alert("not palindrome");
+  }
+  }
+  
+  function vowels(){
+  var s1 = document.getElementById("n1").value;
+  s1=s1.toLowerCase();
+  var count=0;
+  for(var i=0;i<=s1.length()-1;i++){
+	if(s1.charAt(i)=='a'||s1.charAt(i)=='e'||s1.charAt(i)=='i'||s1.charAt(i)=='o'||s1.charAt(i)=='u'){
+	count++;
+	}
+  }
+  alert(count);
+  }
+  
+  function prime(){
+	var s1 = parseInt(document.getElementById("n1").value);
+	var prime =[];
+	for(var i=2;i<=s1;i++){
+		var isprime=true;
+		for(var j=2;j<i;j++){
+			if(i%j ===0){
+			isprime=false;
+			break;
+			}
+		}
+		if(isprime){
+			prime.push(i);
+		}
+	}
+	alert(prime.join(','));
+  }
+  
+  function armstrong(){
+	var s1 = parseInt(document.getElementById("n1").value);
+	var temp,rem,sum=0;
+	temp=s1;
+	while(temp!=0){
+		rem=temp%10;
+		rem=rem*rem*rem;
+		sum+=rem;
+		temp=parseInt(temp/10);
+	}
+	if(sum==s1){
+		alert(s1+" is Armstrong number");
+	}else{
+		alert(s1+" is Not Armstrong number");
+	}
+  }
+  
+  function revstring(){
+	var s1 = (document.getElementById("n1").value);
+	var s2 = s1.split('').reverse().join('');
+	alert(s2);
+  }
+  
+  
+  function fib(){
+	var s1 = parseInt(document.getElementById("n1").value);
+	var n1=0,n2=1,n3;
+	console.log(n1+","+n2);
+	for(var i=2;i<=s1;i++){
+		n3=n1+n2;
+		console.log(n3);
+		n1=n2;
+		n2=n3;
+	}
+  }
+  </script>
+   </body>
+</html>
